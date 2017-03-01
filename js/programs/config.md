@@ -5,7 +5,7 @@ These programs are programs converted from router compatible language to JavaScr
 
 Do know that these files are experimental and can harm your device badly.
 
-'Config$: PRZ.backup.OnStageStart'
+′Config$: PRZ.backup.OnStageStart´
 
 Please add this to the mod/consoleLog on browser to backup before running scripts at all times.
 
