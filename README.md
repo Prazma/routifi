@@ -26,4 +26,4 @@ _We have changed the concepts and the frameworks of RoutiFi_
 
 [pfSense Documentation](https://www.pfsense.org/)
 
-[GET MORE](https://www.google.com)
+[GET MORE](https://www.bing.com)
