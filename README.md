@@ -1,3 +1,7 @@
+_We have changed the concepts and the frameworks of RoutiFi_
+
+***
+
 # routifi
 ### Project RoutiFi
 >RoutiFi is a WiFi router platform
