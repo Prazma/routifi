@@ -9,5 +9,11 @@
   }
 </style>
 In Maintenance...<br>
-<span id="errorTracker">ERROR P101 : No Hardware Content...</span>
+<span id="errorTracker">ERROR P101 : No Hardware Content...</span><br>
+<span id="serverStation">Server : Not Connected</span>
 <script src="js/hardware/serverSide/config.main.js"></script>
+<script>
+  var serSta = document.getElementById("serverStation");
+  var serGet = firebase.database().ref().child("staSta");
+  serGet.on("value", snap => serSta.innerText = snap.val());
+</script>
