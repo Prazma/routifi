@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <title>RoutiFi</title>
 <meta name="author" content="Tomoyoshi Yamamoto">
-<meta name="description" content="A WiFi router platform for browser">
+<meta name="description" content="A free WiFi router platform for browser">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -12,12 +12,12 @@
     text-align: center;
     background: #f1f1f1;
     font-family: sans-serif;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   h1 {
     color: orangered;
@@ -26,7 +26,9 @@
 </style>
 <h1>RoutiFi</h1>
 <span id="errorTracker">ERROR P101 : No Hardware Content...</span><br>
-<span id="serverStation">Server : Not Connected</span>
+<span id="serverStation">Server : Not Connected</span><br>
+<span id="bpsChart">0bps</span>
+<span id="userNum">No Users Connected</span>
 <hr>
 <span><small>This is a work-in-progress project. This program does not work fully, and will sometimes corrupt.<br>This project was established under Prazma Corporations Inc by Tomoyoshi Yamamoto. <br><strong><i>Please be cautious about this program. It may corrupt your device.</i></strong></small></span>
 <script src="js/hardware/serverSide/config.main.js"></script>
