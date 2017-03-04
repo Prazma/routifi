@@ -23,12 +23,23 @@
     color: orangered;
     text-shadow: 0px 0px 2px orangered;
   }
+  #appStation {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px 10px 10px 10px;
+    width: 90%;
+    background: #262626;
+    color: white;
+    border-radius: 5px;
+  }
 </style>
-<h1>RoutiFi</h1>
+<h2 style="text-align: left;">RoutiFi</h2>
+<div id="appStation">
 <span id="errorTracker">ERROR P101 : No Hardware Content...</span><br>
 <span id="serverStation">Server : Not Connected</span><br>
-<span id="bpsChart">0bps</span>
+<span id="bpsChart">0bps</span><br>
 <span id="userNum">No Users Connected</span>
+</div>
 <hr>
 <span><small>This is a work-in-progress project. This program does not work fully, and will sometimes corrupt.<br>This project was established under Prazma Corporations Inc by Tomoyoshi Yamamoto. <br><strong><i>Please be cautious about this program. It may corrupt your device.</i></strong></small></span>
 <script src="js/hardware/serverSide/config.main.js"></script>
