@@ -43,11 +43,11 @@
 </style>
 <h2 style="text-align: left;">RoutiFi</h2>
 <div id="appStation">
-<input id="nameFi" type="text" placeholder="Enter WiFi Name"><br>
-<span id="errorTracker">ERROR P101 : No Hardware Content...</span><br>
-<span id="serverStation">Server : Not Connected</span><br>
-<span id="bpsChart">0bps</span><br>
-<span id="userNum">No Users Connected</span>
+<input id="nameFi" type="text" placeholder="Enter WiFi Name" onchange="shouFunction()"><br>
+<span id="errorTracker statusContent" style="display: none;">ERROR P101 : No Hardware Content...</span><br>
+<span id="serverStation statusContent" style="display: none;">Server : Not Connected</span><br>
+<span id="bpsChart statusContent" style="display: none;">0bps</span><br>
+<span id="userNum statusContent" style="display: none;">No Users Connected</span>
 </div>
 <hr>
 <span><small>This is a work-in-progress project. This program does not work fully, and will sometimes corrupt.<br>This project was established under Prazma Corporations Inc by Tomoyoshi Yamamoto. <br><strong><i>Please be cautious about this program. It may corrupt your device.</i></strong></small></span>
@@ -56,5 +56,9 @@
   var serSta = document.getElementById("serverStation");
   var serGet = firebase.database().ref().child("staSta");
   serGet.on("value", snap => serSta.innerText = snap.val());
+
+function shouFunction() {
+document.getElementById("statusContent").style.display = "";
+}
 </script>
 <script src="js/hardware/tetra.prz.js"></script>
