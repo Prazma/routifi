@@ -7,6 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="orangered">
 <meta name="apple-mobile-web-app-title" content="RoutiFi">
+<meta name="keywords" content="wifi,free,routifi,prazma,one,click,web,app,online,provider,virtual,wifi,adapter,usb,javascript,html,tomoyoshi,yamamoto,tomoyoshi,tomo,connection">
 <style>
   body {
     text-align: center;
@@ -43,11 +44,18 @@
 </style>
 <h2 style="text-align: left;">RoutiFi <span style="font-family: monospace;">BETA</span></h2>
 <div id="appStation">
-<input id="nameFi" type="text" placeholder="Enter WiFi Name"><br>
+<input id="nameFi" type="text" placeholder="Enter WiFi Name" onchange="shouUI()"><br><br>
+<script>
+  function shouUI() {
+    document.getElementById("UIportal").style.display = "";
+  }
+</script>
+<div id="UIportal" style="display: none;">
 <span id="errorTracker">ERROR P101 : No Hardware Content...</span><br>
 <span id="serverStation">Server : Not Connected</span><br>
 <span id="bpsChart">0bps</span><br>
 <span id="userNum">No Users Connected</span>
+</div>
 </div>
 <hr>
 <span><small>This is a work-in-progress project. This program does not work fully, and will sometimes corrupt.<br>This project was established under Prazma Corporations Inc by Tomoyoshi Yamamoto. <br><strong><i>Please be cautious about this program. It may corrupt your device.</i></strong></small></span>
