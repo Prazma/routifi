@@ -1,19 +1,26 @@
-_We have changed the concepts and the frameworks of RoutiFi_
+**_CHECK OUT THE ISSUES FOR UPDATES AND FURTHER INFORMATION ABOUT COMMITMENTS_**
 
 ***
 
-# routifi
+# routifi v.β1.0.2 (prazma.github.io)
 ### Project RoutiFi
 >RoutiFi is a WiFi router platform
 
 ***
 
-### Updates
-* 2017/03/01 21:03 - Update Documentation and Config Files
+### Updates (MAJOR EVENTS)
+* 2017/03/05 10:23 KANSAS - UPDATE DESIGN AND FEATURES AND CONCEPTS
+* 2017/03/02 22:52 LONDON - REMOVE DANGEROUSE SCRIPTS FROM index.html
+* 2017/03/01 21:03 KANSAS - Update Documentation and Config Files
+* 2016/12/13 16:32 TOKYO - DESTROY PROJECT AIM
+* 2016/11/16 17:12 KANSAS - CREATE PROJECT AND ORGANIZATION ÜÏ under PROJECT AIM CrunchFi
+* 2016/10/20 17:45 LONDON - CLOSE CLOUD FUND
+* 2016/10/16 17:21 TOKYO - OPEN CLOUD FUNDING FOR SERVER FEES AND PROJECT FEES
+* 2016/9/12 16:56 TOKYO - LAUNCH PROJECT ROUTIFI
 
 ***
 
-### Resources
+### Resources (THESE RESOURCES ARE NOW PARTLY INVALID FOR OUR PROJECT)
 [WiFi Router Building](https://arstechnica.com/gadgets/2016/04/the-ars-guide-to-building-a-linux-router-from-scratch/)
 
 [WiFi Router Internal Building 1](http://www.hardwaresecrets.com/anatomy-of-a-broadband-router/)
