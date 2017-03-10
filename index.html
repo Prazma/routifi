@@ -32,6 +32,7 @@
     background: #262626;
     color: white;
     border-radius: 5px;
+	box-shadow: 1px 1px 5px #262626;
   }
   #metUSB {
     margin-right: auto;
@@ -40,15 +41,100 @@
     width: 85%;
     background: #cccccc;
     color: white;
+	box-shadow: 0px 0px 5px #262626;
   }
   #nameFi {
     width: 80%;
     background: #f1f1f1;
-    border: none;
+    border: solid;
+	border-color: #262626;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    font-size: 20px;
+	outline: none;
+  }
+  #nameFi:focus {
+    width: 80%;
+    background: #f1f1f1;
+    border: solid;
+	border-color: #0366d6;
     padding: 5px 5px 5px 5px;
     border-radius: 5px;
     font-size: 20px;
   }
+  #btnFilas {
+	display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: rgb(58, 46, 169);
+    background-image: linear-gradient(rgb(114, 130, 205), rgb(62, 75, 158));
+    user-select: none;
+    -webkit-appearance: none;
+    padding: 6px 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(62, 75, 158);
+    border-image: initial;
+    border-radius: 3px;
+  }
+  #btnFilas:disabled {
+	display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: rgb(58, 46, 169);
+    background-image: linear-gradient(rgb(114, 130, 205), rgb(62, 75, 158));
+    user-select: none;
+    -webkit-appearance: none;
+    padding: 6px 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(62, 75, 158);
+    border-image: initial;
+    border-radius: 3px;
+	opacity: 0.6;
+  }
+.loadFilas {
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(0,183,229,0.9);
+    opacity: .9;
+    border-left: 5px solid rgba(0,0,0,0);
+    border-right: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    box-shadow: 0 0 15px #2187e7;
+    width: 15px;
+    height: 15px;
+    margin: 0 auto;
+    -moz-animation: spinoffPulse 1s infinite linear;
+    -webkit-animation: spinoffPulse 1s infinite linear;
+}
+@-moz-keyframes spinoffPulse {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+    };
+}
+@-webkit-keyframes spinoffPulse {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    };
+}
 </style>
 <h2 style="text-align: left;">RoutiFi <span style="font-family: monospace;">BETA</span></h2>
 <div id="metUSB"></div>
@@ -66,10 +152,18 @@
 </script>
 <div id="UIportal" style="display: none;">
 <br>
-<span id="errorTracker">Checking...</span><br>
+<span id="errorTracker">State : Checking...</span><br>
 <span id="serverStation">Server : Not Connected</span><br>
 <span id="bpsChart">0bps</span><br>
-<span id="userNum">No Users Connected</span>
+<span id="userNum">No Users Connected</span><br><br>
+<button id="loadFilas">Add Connection</button>
+	<script>
+		const filas = document.getElementById("btnFilas");
+		filas.addEventListener("click", e => {
+			filas.disabled = true;
+			filas.innerHTML = "Connecting...<div class='circle1'></div>";
+		});
+	</script>
 </div>
 </div>
 <hr>
