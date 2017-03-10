@@ -47,6 +47,9 @@
 <input id="nameFi" type="text" placeholder="Enter WiFi Name" onchange="shouUI()"><br>
 <script>
   function shouUI() {
+    var vax = document.getElementById("nameFi").value; 
+    var nel = vax.replace(" ", "_");
+    document.getElementById("nameFi").value = nel;
     document.getElementById("UIportal").style.display = "";
   }
 </script>
