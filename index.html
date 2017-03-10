@@ -44,13 +44,14 @@
 </style>
 <h2 style="text-align: left;">RoutiFi <span style="font-family: monospace;">BETA</span></h2>
 <div id="appStation">
-<input id="nameFi" type="text" placeholder="Enter WiFi Name" onchange="shouUI()"><br><br>
+<input id="nameFi" type="text" placeholder="Enter WiFi Name" onchange="shouUI()"><br>
 <script>
   function shouUI() {
     document.getElementById("UIportal").style.display = "";
   }
 </script>
 <div id="UIportal" style="display: none;">
+<br>
 <span id="errorTracker">ERROR P101 : No Hardware Content...</span><br>
 <span id="serverStation">Server : Not Connected</span><br>
 <span id="bpsChart">0bps</span><br>
