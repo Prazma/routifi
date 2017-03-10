@@ -156,12 +156,12 @@
 <span id="serverStation">Server : Not Connected</span><br>
 <span id="bpsChart">0bps</span><br>
 <span id="userNum">No Users Connected</span><br><br>
-<button id="loadFilas">Add Connection</button>
+<button id="btnFilas">Add Connection</button>
 	<script>
 		const filas = document.getElementById("btnFilas");
 		filas.addEventListener("click", e => {
 			filas.disabled = true;
-			filas.innerHTML = "Connecting...<div class='circle1'></div>";
+			filas.innerHTML = "Connecting...<div class='loadFilas'></div>";
 		});
 	</script>
 </div>
