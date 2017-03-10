@@ -33,6 +33,14 @@
     color: white;
     border-radius: 5px;
   }
+  #metUSB {
+    margin-right: auto;
+    margin-left: auto;
+	height: 30px;
+    width: 85%;
+    background: #cccccc;
+    color: white;
+  }
   #nameFi {
     width: 80%;
     background: #f1f1f1;
@@ -43,12 +51,13 @@
   }
 </style>
 <h2 style="text-align: left;">RoutiFi <span style="font-family: monospace;">BETA</span></h2>
+<div id="metUSB"></div>
 <div id="appStation">
 <input id="nameFi" type="text" placeholder="Enter WiFi Name" onchange="shouUI()"><br>
 <script>
   function shouUI() {
     document.getElementById("nameFi").value = document.getElementById("nameFi").value.replace(/ /g, '_');
-    document.getElementById("nameFi").value += "(RoutiFi)";
+    var ssidVPRZ = document.getElementById("nameFi").value + "(RoutiFi)";
     document.getElementById("UIportal").style.display = "";
   }
 </script>
