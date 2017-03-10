@@ -121,7 +121,6 @@
     0% {
         -moz-transform: rotate(0deg);
     }
-
     100% {
         -moz-transform: rotate(360deg);
     };
@@ -130,7 +129,6 @@
     0% {
         -webkit-transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
     };
@@ -139,7 +137,8 @@
 <h2 style="text-align: left;">RoutiFi <span style="font-family: monospace;">BETA</span></h2>
 <div id="metUSB"></div>
 <div id="appStation">
-<input id="nameFi" type="text" placeholder="Enter WiFi Name" onchange="shouUI()"><br>
+<span id="noteAbout" style="font-size: 20px; display: block;">CREATE A NEW WiFi</span>
+<input id="nameFi" type="text" placeholder="Enter WiFi Name" onchange="shouUI()" onclick="hideNote()"><br>
 <script>
   function shouUI() {
     document.getElementById("nameFi").value = document.getElementById("nameFi").value.replace(/ /g, '_');
@@ -149,6 +148,9 @@
     var ssidVPRZ = document.getElementById("nameFi").value + "(RoutiFi)";
     document.getElementById("UIportal").style.display = "";
   }
+	function hideNote() {
+		document.getElementById("noteAbout").style.display = "none";
+	}
 </script>
 <div id="UIportal" style="display: none;">
 <br>
@@ -161,7 +163,7 @@
 		const filas = document.getElementById("btnFilas");
 		filas.addEventListener("click", e => {
 			filas.disabled = true;
-			filas.innerHTML = "Connecting...<div class='loadFilas'></div>";
+			filas.innerHTML = "Building...<div class='loadFilas'></div>";
 		});
 	</script>
 </div>
