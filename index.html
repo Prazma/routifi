@@ -152,19 +152,32 @@
 		document.getElementById("noteAbout").style.display = "none";
 	}
 </script>
-<div id="UIportal" style="display: none;">
 <br>
+	<div id="UIinfo">
 <span id="errorTracker">State : Checking...</span><br>
 <span id="serverStation">Server : Not Connected</span><br>
-<span id="bpsChart">0bps</span><br>
-<span id="userNum">No Users Connected</span><br><br>
-<button id="btnFilas">Add Connection</button>
+<span id="serverStation">Users Connected : 0</span><br><br>
+	<span id="bpsChart">IP Address : <span id="IPport">NULL</span></span><br>
+	<span id="userNum">Subnet Mask : <span id="SubMasport">NULL</span></span><br>
+	<span id="ROUTER">Router : <span id="ROUport">NULL</span></span><br>
+	<span id="DNS">DNS : <span id="DNSport">NULL</span></span><br>
+	<span id="DOM">Search Domains : <span id="DOMport">NULL</span></span><br>
+	<span id="CLIENT">Client ID : <span id="CLIport">NULL</span></span><br><br>
+	</div>
+<div id="UIportal" style="display: none;">
+<button id="btnFilas" onclick="filasBuild()">Add Connection</button>
 	<script>
 		const filas = document.getElementById("btnFilas");
 		filas.addEventListener("click", e => {
 			filas.disabled = true;
 			filas.innerHTML = "Building...<div class='loadFilas'></div>";
+    			document.getElementById("UIinfo").style.display = "";
 		});
+		function filasBuild() {
+			filas.disabled = true;
+			filas.innerHTML = "Building...<div class='loadFilas'></div>";
+    			document.getElementById("UIinfo").style.display = "";
+		}
 	</script>
 </div>
 </div>
