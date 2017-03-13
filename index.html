@@ -167,13 +167,23 @@
 	<span id="CLIENT">Client ID : <span id="CLIport">NULL</span></span><br><br>
 	</div>
 <div id="UIportal" style="display: none;">
-<button id="btnFilas" onclick="filasBuild()">Add Connection</button>
+<button id="btnFilas" onclick="filasDisplay(); filasBuild();">Add Connection</button>
+	<script>
+    		function filasDisplay() {
+			document.getElementById("UIinfo").style.display = "";
+			var firstProxyKey= Math.floor((Math.random() * 255) + 0);
+    			var secondProxyKey= Math.floor((Math.random() * 255) + 0);
+    			var thirdProxyKey= Math.floor((Math.random() * 255) + 0);
+    			var fourthProxyKey= Math.floor((Math.random() * 255) + 0);
+    			document.getElementById("IPport").innerHTML = firstProxyKey + "." + secondProxyKey + "." + thirdProxyKey + "." + fourthProxyKey;
+			filas.innerHTML = "Building...<div class='loadFilas'></div>";
+		}
+	</script>
 	<script>
 		const filas = document.getElementById("btnFilas");
 		filas.addEventListener("click", e => {
 			filas.disabled = true;
 			filas.innerHTML = "Building...<div class='loadFilas'></div>";
-    			document.getElementById("UIinfo").style.display = "";
 		});
 		function filasBuild() {
 			filas.disabled = true;
