@@ -1,204 +1,145 @@
 <!DOCTYPE html>
-<title>RoutiFi</title>
-<meta name="author" content="Tomoyoshi Yamamoto">
-<meta name="description" content="A free WiFi router platform for browser">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="orangered">
-<meta name="apple-mobile-web-app-title" content="RoutiFi">
-<meta name="keywords" content="wifi,free,routifi,prazma,one,click,web,app,online,provider,virtual,wifi,adapter,usb,javascript,html,tomoyoshi,yamamoto,tomoyoshi,tomo,connection">
-<style>
-  body {
-    text-align: center;
-    background: #f1f1f1;
-    font-family: sans-serif;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  h1 {
-    color: orangered;
-    text-shadow: 0px 0px 2px orangered;
-  }
-  #appStation {
-    margin-right: auto;
-    margin-left: auto;
-    padding: 10px 10px 10px 10px;
-    width: 90%;
-    background: #262626;
-    color: white;
-    border-radius: 5px;
-	box-shadow: 1px 1px 5px #262626;
-  }
-  #metUSB {
-    margin-right: auto;
-    margin-left: auto;
-	height: 30px;
-    width: 85%;
-    background: #cccccc;
-    color: white;
-	box-shadow: 0px 0px 5px #262626;
-  }
-  #nameFi {
-    width: 80%;
-    background: #f1f1f1;
-    border: solid;
-	border-color: #262626;
-    padding: 5px 5px 5px 5px;
-    border-radius: 5px;
-    font-size: 20px;
-	outline: none;
-  }
-  #nameFi:focus {
-    width: 80%;
-    background: #f1f1f1;
-    border: solid;
-	border-color: #0366d6;
-    padding: 5px 5px 5px 5px;
-    border-radius: 5px;
-    font-size: 20px;
-  }
-  #btnFilas {
-	display: inline-block;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 20px;
-    color: rgb(255, 255, 255);
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    background-color: rgb(58, 46, 169);
-    background-image: linear-gradient(rgb(114, 130, 205), rgb(62, 75, 158));
-    user-select: none;
-    -webkit-appearance: none;
-    padding: 6px 12px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(62, 75, 158);
-    border-image: initial;
-    border-radius: 3px;
-  }
-  #btnFilas:disabled {
-	display: inline-block;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 20px;
-    color: rgb(255, 255, 255);
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    background-color: rgb(58, 46, 169);
-    background-image: linear-gradient(rgb(114, 130, 205), rgb(62, 75, 158));
-    user-select: none;
-    -webkit-appearance: none;
-    padding: 6px 12px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(62, 75, 158);
-    border-image: initial;
-    border-radius: 3px;
-	opacity: 0.6;
-  }
-.loadFilas {
-    background-color: rgba(0,0,0,0);
-    border: 5px solid rgba(0,183,229,0.9);
-    opacity: .9;
-    border-left: 5px solid rgba(0,0,0,0);
-    border-right: 5px solid rgba(0,0,0,0);
-    border-radius: 50px;
-    box-shadow: 0 0 15px #2187e7;
-    width: 15px;
-    height: 15px;
-    margin: 0 auto;
-    -moz-animation: spinoffPulse 1s infinite linear;
-    -webkit-animation: spinoffPulse 1s infinite linear;
-}
-@-moz-keyframes spinoffPulse {
-    0% {
-        -moz-transform: rotate(0deg);
-    }
-    100% {
-        -moz-transform: rotate(360deg);
-    };
-}
-@-webkit-keyframes spinoffPulse {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-    };
-}
-</style>
-<h2 style="text-align: left;">RoutiFi <span style="font-family: monospace;">BETA</span></h2>
-<div id="metUSB"></div>
-<div id="appStation">
-<span id="noteAbout" style="font-size: 20px; display: block;">CREATE A NEW WiFi</span>
-<input id="nameFi" type="text" placeholder="Enter WiFi Name" onchange="shouUI()" onclick="hideNote()"><br>
-<script>
-  function shouUI() {
-    document.getElementById("nameFi").value = document.getElementById("nameFi").value.replace(/ /g, '_');
-    document.getElementById("nameFi").value = document.getElementById("nameFi").value.replace(/'/g, '');
-    document.getElementById("nameFi").value = document.getElementById("nameFi").value.replace(/,/g, '');
-    document.getElementById("nameFi").value = document.getElementById("nameFi").value.replace(/"/g, '');
-    var ssidVPRZ = document.getElementById("nameFi").value + "(RoutiFi)";
-    document.getElementById("UIportal").style.display = "";
-  }
-	function hideNote() {
-		document.getElementById("noteAbout").style.display = "none";
-	}
-</script>
-<br>
-	<div id="UIinfo" style="display: none;">
-		<span><strong>STATUS</strong></span><br>
-<span id="errorTracker">State : Checking...</span><br>
-<span id="serverStation">Server : Not Connected</span><br>
-<span id="serverStation">Users Connected : 0</span><br><br>
-		<span><strong>IP ADDRESS</strong></span><br>
-	<span id="bpsChart">IP Address : <span id="IPport">NULL</span></span><br>
-	<span id="userNum">Subnet Mask : <span id="SubMasport">NULL</span></span><br>
-	<span id="ROUTER">Router : <span id="ROUport">NULL</span></span><br>
-	<span id="DNS">DNS : <span id="DNSport">NULL</span></span><br>
-	<span id="DOM">Search Domains : <span id="DOMport">NULL</span></span><br>
-	<span id="CLIENT">Client ID : <span id="CLIport">NULL</span></span><br><br>
-	</div>
-<div id="UIportal" style="display: none;">
-<button id="btnFilas" onclick="filasDisplay(); filasBuild();">Add Connection</button>
-	<script>
-    		function filasDisplay() {
-			document.getElementById("UIinfo").style.display = "";
-			var firstProxyKey= Math.floor((Math.random() * 255) + 0);
-    			var secondProxyKey= Math.floor((Math.random() * 255) + 0);
-    			var thirdProxyKey= Math.floor((Math.random() * 255) + 0);
-    			var fourthProxyKey= Math.floor((Math.random() * 255) + 0);
-    			document.getElementById("IPport").innerHTML = firstProxyKey + "." + secondProxyKey + "." + thirdProxyKey + "." + fourthProxyKey;
-			filas.innerHTML = "Building...<div class='loadFilas'></div>";
-		}
-	</script>
-	<script>
-		const filas = document.getElementById("btnFilas");
-		filas.addEventListener("click", e => {
-			filas.disabled = true;
-			filas.innerHTML = "Building...<div class='loadFilas'></div>";
-		});
-		function filasBuild() {
-			filas.disabled = true;
-			filas.innerHTML = "Building...<div class='loadFilas'></div>";
-    			document.getElementById("UIinfo").style.display = "";
-		}
-	</script>
-</div>
-</div>
-<hr>
-<span><small>This is a work-in-progress project. This program does not absolutly work, and still has many issues.<br>This project was established under Prazma Inc. <br></small></span>
-<script src="js/hardware/serverSide/config.main.js"></script>
-<script>
-  var serSta = document.getElementById("serverStation");
-  var serGet = firebase.database().ref().child("staSta");
-  serGet.on("value", snap => serSta.innerText = snap.val());
-</script>
-<script src="js/hardware/tetra.prz.js"></script>
+<html>
+	<head>
+		<title>RoutiFi</title>
+		<meta name="author" content="Tomoyoshi Yamamoto">
+		<meta name="description" content="Create and share internet connection for free with RoutiFi.">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="orangered">
+		<meta name="apple-mobile-web-app-title" content="RoutiFi">
+		<meta name="keywords" content="wifi,free,routifi,prazma,one,click,web,app,online,provider,virtual,wifi,adapter,usb,javascript,html,tomoyoshi,yamamoto,tomoyoshi,tomo,connection">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<style>
+			html {
+				background: #e1e1e1;
+			}	
+			body {
+				font-family: sans-serif;
+				margin: 0;
+				-webkit-touch-callout: none;
+    			-webkit-user-select: none;
+    			-khtml-user-select: none;
+    			-moz-user-select: none;
+    			-ms-user-select: none;
+    			user-select: none;
+			}
+			#routifiConnect {
+				margin-top: 20px;
+				width: 100%;
+				background: #ffffff;
+				padding: 10px 0px 10px 0px;
+				font-size: 15px;
+				border-top: solid;
+				border-top-width: 1px;
+				border-top-color: #bfbfbf;
+				border-bottom: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #bfbfbf;
+				text-align: center;
+				transition: 1s;
+			}
+			#routifiConnect:hover {
+				margin-top: 20px;
+				width: 100%;
+				background: #bfbfbf;
+				padding: 10px 0px 10px 0px;
+				font-size: 15px;
+				border-top: solid;
+				border-top-width: 1px;
+				border-top-color: #bfbfbf;
+				border-bottom: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #bfbfbf;
+			}
+			#routifiSettings {
+				margin-top: 20px;
+				width: 100%;
+				font-size: 15px;
+				background: #ffffff;
+				padding: 10px 0px 10px 0px;
+				border-top: solid;
+				border-top-width: 1px;
+				border-top-color: #bfbfbf;
+				border-bottom: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #bfbfbf;
+				transition: 1s;
+			}
+			.modForm {
+				border: hidden;
+				font-size: 15px;
+				outline: none;
+				width: 60%;
+			}
+			shouPortal {
+				height: 100px;
+				width: 100px;
+				background: #e1e1e1;
+				display: block;
+				border-radius: 50%;
+				margin-top: 20px;
+				margin-left: auto;
+				margin-right: auto;
+				transition: 0.5;
+				-webkit-transition: 0.5;
+			}
+		</style>
+	</head>
+	<body onload="setRoute()">
+		<div id="formPortal">
+			<div id="errorLog" style="display: block;"><strong>Critical Loading Error. Relaunch App.</strong></div>
+			<div id="routifiSettings"></div>
+			<div id="routifiConnect" style="opacity: 0;"></div>
+			<span id="routifiBanner"></span>
+		</div>
+		<script>
+			function setRoute() {
+				const conRou = document.getElementById("routifiConnect");
+				const conDis = document.getElementById("routifiBanner");
+				const conPas = document.getElementById("routifiSettings");
+				const error = document.getElementById("errorLog");
+				conRou.innerHTML = "<span>Launch Connection</span>";
+				conRou.style.display = "none";
+				conPas.innerHTML = "<span style='margin-left: 10px;'>WiFi Name </span><input id='nameFi' class='modForm' type='text' placeholder='Required' style='margin-left: 50px;' onchange='checkVAL()'><hr><span style='margin-left: 10px;'>WiFi Password </span><input id='passFi' class='modForm' type='password' placeholder='Required (Must Contain 10 Letters)' style='margin-left: 23px;' onchange='checkVAL()'>";
+				error.style.display = "none";
+			}
+			function shouConOp() {
+				const conRou = document.getElementById("routifiConnect");
+				conRou.style.display = "";
+				setTimeout(function () {
+					conRou.style.opacity = "1";
+				}, 500)
+				setTimeout(function () {
+					conRou.style.transition = "0s";
+				}, 1000)
+			}
+			function checkVAL() {
+				var nameFiVal = document.getElementById("nameFi").value;
+				var nameFiValLen = nameFiVal.length;
+				console.log(nameFiValLen);
+				var passFiVal = document.getElementById("passFi").value;
+				var passFiValLen = passFiVal.length;
+				console.log(passFiValLen);
+				if(nameFiValLen>0&&passFiValLen>10) {
+					shouConOp();
+				}
+			}
+			$("#routifiConnect").click(function(){
+				const conRou = document.getElementById("routifiConnect");
+				conRou.innerHTML = "<span>Building...</span>";
+				setTimeout(function () {
+					document.getElementById("formPortal").style.display = "none";
+					document.body.innerHTML += "<shouPortal id='portalPatch'></shouPortal>";
+					startVortex();
+				}, 2000)
+			});
+			function startVortex() {
+				const portal = document.getElementById("portalPatch");
+				portal.style.background = "#bfbfbf";
+				portal.style.boxShadow = "0px 0px 10px #8ef093";
+			}
+		</script>
+	</body>
+</html>
