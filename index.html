@@ -72,7 +72,7 @@
 				border: hidden;
 				font-size: 15px;
 				outline: none;
-				width: 140px;
+				width: 110px;
 			}
 			shouPortal {
 				height: 100px;
@@ -89,12 +89,13 @@
 		</style>
 	</head>
 	<body onload="setRoute()">
+		<span id="routifiBanner"></span>
 		<shouPortal id='portalPatch' style="box-shadow: 0px 0px 5px;"></shouPortal>
 		<div id="formPortal">
 			<div id="errorLog" style="display: block;"><strong>Critical Loading Error. Relaunch App.</strong></div>
 			<div id="routifiSettings"></div>
 			<div id="routifiConnect" style="opacity: 0;"></div>
-			<span id="routifiBanner"></span>
+			<br><br>
 		</div>
 		<script>
 			function setRoute() {
@@ -104,7 +105,7 @@
 				const error = document.getElementById("errorLog");
 				conRou.innerHTML = "<span>Launch Connection</span>";
 				conRou.style.display = "none";
-				conPas.innerHTML = "<span style='margin-left: 10px;'>WiFi Name </span><input id='nameFi' class='modForm' type='text' placeholder='Required' style='margin-left: 50px;' onchange='checkVAL()'><hr><span style='margin-left: 10px;'>WiFi Password </span><input id='passFi' class='modForm' type='password' placeholder='Required' style='margin-left: 23px;' onchange='checkVAL()'><span style='margin-left: 10px;'><small>[Contain at least 10 letters]</small></span>";
+				conPas.innerHTML = "<span style='margin-left: 10px;'>WiFi Name </span><input id='nameFi' class='modForm' type='text' placeholder='Required' style='margin-left: 50px;' onchange='checkVAL()'><hr><span style='margin-left: 10px;'>WiFi Password </span><input id='passFi' class='modForm' type='password' placeholder='Required' style='margin-left: 23px;' onchange='checkVAL()'><br><span style='margin-left: 10px;'><small>[Contain at least 10 letters]</small></span>";
 				error.style.display = "none";
 			}
 			function shouConOp() {
