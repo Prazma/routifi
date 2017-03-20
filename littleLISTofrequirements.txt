@@ -1,0 +1,48 @@
+Interface name: Wireless Network Connection
+
+Driver                    : Broadcom 802.11n Network Adapter
+Vendor                    : Broadcom
+Provider                  : Broadcom
+Date                      : 8/22/2013
+Version                   : 6.32.223.1
+INF file                  : C:\Windows\INF\oem75.inf
+Files                     : 5 total
+                            C:\Windows\system32\DRIVERS\BCMWL664.SYS
+                            C:\Windows\system32\bcmihvsrv64.dll
+                            C:\Windows\system32\bcmihvui64.dll
+                            C:\Windows\system32\drivers\vwifibus.sys
+                            C:\Windows\system32\bcmwlcoi.dll
+Type                      : Native Wi-Fi Driver
+Radio types supported     : 802.11n 802.11g 802.11b
+FIPS 140-2 mode supported : Yes
+Hosted network supported  : Yes
+Authentication and cipher supported in infrastructure mode:
+                            Open            None
+                            Open            WEP
+                            Shared          None
+                            Shared          WEP
+                            WPA2-Enterprise TKIP
+                            WPA2-Personal   TKIP
+                            WPA2-Enterprise CCMP
+                            WPA2-Personal   CCMP
+                            WPA2-Enterprise Vendor defined
+                            WPA2-Enterprise Vendor defined
+                            Vendor defined  Vendor defined
+                            Vendor defined  Vendor defined
+                            Vendor defined  TKIP
+                            Vendor defined  CCMP
+                            Vendor defined  Vendor defined
+                            Vendor defined  Vendor defined
+                            WPA-Enterprise  TKIP
+                            WPA-Personal    TKIP
+                            WPA-Enterprise  CCMP
+                            WPA-Personal    CCMP
+Authentication and cipher supported in ad-hoc mode:
+                            WPA2-Personal   CCMP
+                            Open            None
+                            Open            WEP
+IHV service present       : Yes
+IHV adapter OUI           : [00 10 18], type: [00]
+IHV extensibility DLL path: C:\Windows\System32\bcmihvsrv64.dll
+IHV UI extensibility ClSID: {aaa6dee9-31b9-4f18-ab39-82ef9b06eb73}
+IHV diagnostics CLSID     : {00000000-0000-0000-0000-000000000000}
