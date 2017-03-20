@@ -25,7 +25,7 @@
     			-ms-user-select: none;
     			user-select: none;
 			}
-			#routifiConnect {
+			.btn {
 				margin-top: 20px;
 				width: 90%;
 				font-size: 15px;
@@ -35,12 +35,12 @@
 				border-width: 1px;
 				border-color: #bfbfbf;
 				border-radius: 10px;
-				transition: 1s;
+				transition: 0.5s;
 				margin-left: auto;
 				margin-right: auto;
 				text-align: center;
 			}
-			#routifiConnect:hover {
+			.btn:hover {
 				margin-top: 20px;
 				width: 90%;
 				background: #bfbfbf;
@@ -54,7 +54,7 @@
 				border-bottom-color: #bfbfbf;
 				text-align: center;
 			}
-			#routifiSettings {
+			.form {
 				margin-top: 20px;
 				width: 90%;
 				font-size: 15px;
@@ -80,11 +80,47 @@
 				background: #e1e1e1;
 				display: block;
 				border-radius: 50%;
+				border: solid;
+				border-width: 1px;
+				border-color: #bfbfbf;
 				margin-top: 20px;
 				margin-left: auto;
 				margin-right: auto;
 				transition: 0.5;
 				-webkit-transition: 0.5;
+				-webkit-animation-name: electronUNIVERS;
+    			-webkit-animation-duration: 1s;
+    			-webkit-animation-iteration-count: infinite;
+    			animation-name: electronUNIVERS;
+    			animation-duration: 1s;
+    			animation-iteration-count: infinite;
+			}
+			hr {
+				border: solid;
+				border-width: 0.1px;
+				border-color: #bfbfbf;
+			}
+			@-webkit-keyframes electronUNIVERS {
+			    0%   {box-shadow: rgb(0, 180, 251) 0px 0px 60px}
+			    12.5% {box-shadow: rgb(0, 180, 251) 0px 0px 50px}
+			    25%  {box-shadow: rgb(0, 180, 251) 0px 0px 40px}
+			    37.5% {box-shadow: rgb(0, 180, 251) 0px 0px 30px}
+			    50%  {box-shadow: rgb(0, 180, 251) 0px 0px 20px}
+			    72.5% {box-shadow: rgb(0, 180, 251) 0px 0px 30px}
+			    75%  {box-shadow: rgb(0, 180, 251) 0px 0px 40px}
+			    87.5% {box-shadow: rgb(0, 180, 251) 0px 0px 50px}
+			    100% {box-shadow: rgb(0, 180, 251) 0px 0px 60px}
+			}
+			@keyframes electronUNIVERS {
+			    0%   {box-shadow: rgb(0, 180, 251) 0px 0px 60px}
+			    12.5% {box-shadow: rgb(0, 180, 251) 0px 0px 50px}
+			    25%  {box-shadow: rgb(0, 180, 251) 0px 0px 40px}
+			    37.5% {box-shadow: rgb(0, 180, 251) 0px 0px 30px}
+			    50%  {box-shadow: rgb(0, 180, 251) 0px 0px 20px}
+			    72.5% {box-shadow: rgb(0, 180, 251) 0px 0px 30px}
+			    75%  {box-shadow: rgb(0, 180, 251) 0px 0px 40px}
+			    87.5% {box-shadow: rgb(0, 180, 251) 0px 0px 50px}
+			    100% {box-shadow: rgb(0, 180, 251) 0px 0px 60px}
 			}
 		</style>
 	</head>
@@ -93,8 +129,12 @@
 		<shouPortal id='portalPatch' style="box-shadow: 0px 0px 5px;"></shouPortal>
 		<div id="formPortal">
 			<div id="errorLog" style="display: block;"><strong>Critical Loading Error. Relaunch App.</strong></div>
-			<div id="routifiSettings"></div>
-			<div id="routifiConnect" style="opacity: 0;"></div>
+			<div id="routifiSettings" class="form"></div>
+			<div id="routifiConnect" class="btn" style="opacity: 0;"></div>
+			<br><br>
+		</div>
+		<div id="formFETCH" style="display: none;">
+			<div id="routerFETCHsubmit" class="btn" style="opacity: 0;">Fetch New Connection</div>
 			<br><br>
 		</div>
 		<script>
@@ -114,9 +154,6 @@
 				setTimeout(function () {
 					conRou.style.opacity = "1";
 				}, 500)
-				setTimeout(function () {
-					conRou.style.transition = "0s";
-				}, 1000)
 			}
 			function checkVAL() {
 				var nameFiVal = document.getElementById("nameFi").value;
@@ -139,9 +176,19 @@
 			});
 			function startVortex() {
 				const portal = document.getElementById("portalPatch");
-				portal.style.background = "#bfbfbf";
-				portal.style.boxShadow = "0px 0px 20px #8ef093";
+				const conFET = document.getElementById("routerFETCHsubmit");
+				portal.style.boxShadow = "rgb(0, 180, 251) 0px 0px 100px";
+				document.getElementById("formFETCH").style.display = "block";
+				conFET.style.opacity = "1";
 			}
+			$("#routerFETCHsubmit").click(function(){
+				const conFET = document.getElementById("routerFETCHsubmit");
+				conFET.innerHTML = "<span>Processing...</span>";
+				setTimeout(function () {
+					document.getElementById("formPortal").style.display = "none";
+					startVortex();
+				}, 2000)
+			});
 		</script>
 	</body>
 </html>
