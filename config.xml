@@ -6,14 +6,14 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>[Title of your app]</name>
+    <name>RoutiFi</name>
 
     <description>
         An app that connects you to the internet with one tap!
     </description>
 
     <author href="https://prazma.github.io" email="html5mac@gmail.com">
-        Shawk Stanberg
+        Shawk Stanberg, Tomoyoshi Yamamoto
     </author>
 
 </widget>
