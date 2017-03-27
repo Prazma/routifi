@@ -1,46 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>RoutiFi</title>
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<style>
-body {
-margin: 0;
-font-family: sans-serif;
-background: #f1f1f1;
-}
-#alertBanner {
-position: fixed;
-top: 0;
-width: 100%;
-padding: 5px 0px 5px 0px;
-background: #2196f3;
-opacity: 0;
-transition: 0.5s;
--webkit-transition: 0.5s;
-color: #ffffff;
-text-align: center;
-}
-  #versionShou {
-    position: absolute;
-    bottom: 0;
-  }
-</style>
-</head>
-<body id="UIport" onload="setupOSfi()">
-<div id="visualBanner"></div>
-<div id="UIshou"></div>
-<div id="alertBanner"></div>
-<span id="versionShou"><small>Version "UImark I BETA"</small></span>
-<script>
-function setupOSfi() {
-const alert = document.getElementById("alertBanner");
-alert.innerHTML = "Loading Data...";
-setTimeout( function () {
-alert.style.opacity = "0.9";
-}, 500)
-}
-</script>
-</body>
+	<head>
+		<title>RoutiFi</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://raw.githubusercontent.com/gildas-lormeau/zip.js/master/WebContent/zip.js"></script>
+		<script src="https://gildas-lormeau.github.io/zip.js/demos/zip-ext.js"></script>
+		<script src="https://gildas-lormeau.github.io/zip.js/demos/demo2.js"></script>
+		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<style>
+			body {
+				margin: 0;
+				font-family: sans-serif;
+				background: #f1f1f1;
+				-webkit-touch-callout: none;
+    			-webkit-user-select: none;
+    			-khtml-user-select: none;
+    			-moz-user-select: none;
+    			-ms-user-select: none;
+    			user-select: none;
+			}
+			#alertBanner {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				padding: 5px 0px 5px 0px;
+				background: #2196f3;
+				opacity: 0;
+				transition: 0.5s;
+				-webkit-transition: 0.5s;
+				color: #ffffff;
+				text-align: center;
+			}
+			#versionShou {
+				position: absolute;
+				bottom: 0;
+			}
+			#myProgress {
+				width: 100%;
+				background-color: #bfbfbf;
+				margin-top: 100px;
+				padding: 10px 0px 10px 0px;
+			}
+			#myBar {
+				width: 0%;
+				height: 30px;
+				background-color: #ff5722;
+				text-align: center;
+				line-height: 30px;
+				color: white;
+                opacity: 0.8;
+			}
+			#UIport {
+				width: 100%;
+				height: 100vh;
+				background: #f1f1f1;
+			}
+		</style>
+	</head>
+	<body id="UIport" onload="setupOSfi()">
+		<div data-role="page" id="pageone">
+			<div id="visualBanner">
+				<div id="myProgress"><div id="myBar"></div></div>
+			</div>
+			<div id="UIshou"></div>
+			<div id="alertBanner"></div>
+			<div id="UIport"></div>
+            <script>
+				$(document).on("pagecreate","#pageone",function(){
+					$("#myProgress").on("swiperight",function(){
+						loadGettaScheme();
+					});                       
+				});
+			</script>
+			<span id="versionShou"><small><code>Version "UImark I BETA"</code></small></span>
+			<script>
+				function setupOSfi() {
+					const alert = document.getElementById("alertBanner");
+					alert.innerHTML = "Loading Data";
+					setTimeout( function () {
+						alert.style.opacity = "0.7";
+					}, 500)
+					setTimeout( function () {
+						var passMount = 5;
+						var passFin = 0;
+						var passNe = " (" + passFin + "/" + passMount + ")";
+						alert.innerHTML = "Checking Requirements" + passNe;
+						loadGettaScheme();
+					}, 1500)
+				}
+				function loadGettaScheme() {
+				  var elem = document.getElementById("myBar");   
+				  var width = 0;
+				  var id = setInterval(frame, 0);
+				  function frame() {
+				    if (width >= 100) {
+				      clearInterval(id);
+				    } else {
+				      width++; 
+				      elem.style.width = width + '%';
+				    }
+				  }
+				}
+            </script>
+		</div>
+	</body>
 </html>
