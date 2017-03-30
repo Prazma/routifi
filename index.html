@@ -32,6 +32,7 @@
 				-webkit-transition: 0.5s;
 				color: #ffffff;
 				text-align: center;
+				box-shadow: 5px 5px 5px;
 			}
 			#versionShou {
 				position: absolute;
@@ -58,6 +59,18 @@
 				/*height: 100vh;*/
 				background: #f1f1f1;
 			}
+			#browserPORT {
+				margin-top: 40px;
+				margin-right: 5%;
+				margin-left: 5%;
+				text-align: center;
+				width: 90%;
+				height: 100px;
+				border-radius: 10px;
+				border: solid;
+				border-color: #cccccc;
+				border-width: 2px;
+			}
 		</style>
 	</head>
 	<body id="UIport" onload="setupOSfi()">
@@ -65,10 +78,11 @@
 			<div id="visualBanner">
 				<div id="myProgress"><div id="myBar"></div></div>
 			</div>
+			<iframe id="browserPORT" src="https://github.com"></iframe>
 			<div id="UIshou"></div>
 			<div id="alertBanner"></div>
 			<div id="UIport"></div>
-            <script>
+			<script>
 				$(document).on("pagecreate","#pageone",function(){
 					$("#myProgress").on("swiperight",function(){
 						loadGettaScheme();
@@ -79,17 +93,29 @@
 			<script>
 				function setupOSfi() {
 					const alert = document.getElementById("alertBanner");
+					const barrix = document.getElementById("myBar");
 					alert.innerHTML = "Loading Data";
 					setTimeout( function () {
 						alert.style.opacity = "0.7";
 					}, 500)
 					setTimeout( function () {
 						var passMount = 5;
-						var passFin = 0;
+						var passFin = 5;
 						var passNe = " (" + passFin + "/" + passMount + ")";
 						alert.innerHTML = "Checking Requirements" + passNe;
 						loadGettaScheme();
 					}, 1500)
+					setTimeout( function () {
+						alert.innerHTML = "Loading Data Packets...";
+						alert.style.background = "#b908e8";
+						barrix.style.background = "#b908e8";
+					}, 2000)
+					setTimeout( function () {
+						alert.innerHTML = "Error: Empty Packet";
+						alert.style.background = "red";
+						barrix.style.background = "red";
+						denyGettaScheme();
+					}, 2500)
 				}
 				function loadGettaScheme() {
 				  var elem = document.getElementById("myBar");   
@@ -100,6 +126,19 @@
 				      clearInterval(id);
 				    } else {
 				      width++; 
+				      elem.style.width = width + '%';
+				    }
+				  }
+				}
+				function denyGettaScheme() {
+				  var elem = document.getElementById("myBar");   
+				  var width = 100;
+				  var id = setInterval(frame, 0);
+				  function frame() {
+				    if (width <= 0) {
+				      clearInterval(id);
+				    } else {
+				      width--; 
 				      elem.style.width = width + '%';
 				    }
 				  }
