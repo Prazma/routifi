@@ -70,7 +70,7 @@
 			}
 			#konCheck {
 				width: 180px;
-				height: 200px;
+				height: 230px;
 				background: #ffffff;
 				border-radius: 10px;
 				box-shadow: 0px 0px 10px #888888;
@@ -108,7 +108,10 @@
 		</style>
 	</head>
 	<body id="UIport">
-		<div id="konCheck"><div id="konVisuals"></div>Your RoutiFi connection will be setup over the internet.<br><strong> You must be connected to a WiFi connection at this point.</strong><button onclick="setupOSfi()" class="btn">OK</button></div>
+		<div id="konCheck"><div id="konVisuals"></div>
+			Your RoutiFi connection will be setup over the internet.<br>
+			<strong> You must be connected to a WiFi connection at this point.</strong>
+			<button onclick="PresetupOSfi()" class="btn">OK</button></div>
 		<div id="routiProgram" style="display: none;">
 			<div id="visualBanner">
 				<div id="myProgress"><div id="myBar"></div></div>
@@ -119,6 +122,11 @@
 			<div id="UIport"></div>
 			<span id="versionShou"><small><code>Version "UImark I BETA"</code></small></span>
 			<script>
+				function PresetupOSfi() {
+					setTimeout( function () {
+						setupOSfi();
+					}, 500)
+				}
 				function setupOSfi() {
 					const alert = document.getElementById("alertBanner");
 					const barrix = document.getElementById("myBar");
