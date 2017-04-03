@@ -89,38 +89,59 @@
 				margin-left: auto;
 			}
 			.btn {
-				margin-left: 20px;
+				margin-left: auto;
 				background: #ffffff;
 				border: none;
+				margin-top: 10px;
 				box-shadow: 0px 0px 5px #888888;
 				border-radius: 5px;
 				padding: 1px 30px 1px 30px;
 			}
 			.btn:hover {
-				margin-left: 20px;
+				margin-left: auto;
 				background: #ffffff;
 				border: none;
 				box-shadow: 0px 0px 5px #0898e8;
 				border-radius: 5px;
 				padding: 1px 30px 1px 30px;
 			}
+			#portabeta {
+				text-align: center;
+			}
 		</style>
 	</head>
-	<body id="UIport">
-		<div id="konCheck"><div id="konVisuals"></div>
+	<body id="UIport" onload="initBETAset()">
+		<div id="portabeta">
+			<h1>RoutiFi<span style="display: none;">-</span></h1>
+			<h3>Surf the internet without the internet connection!</h3>
+			<h3>The revolutionary browser built for all platforms and devices!</h3>
+			<h3 style="position: fixed; bottom: 0;"><i>Please Wait...</i></h3>
+		</div>
+		<div id="konCheck" style="display: none;"><div id="konVisuals"></div>
 			Your RoutiFi connection will be setup over the internet.<br>
-			<strong> You must be connected to a WiFi connection at this point.</strong>
+			<strong> You must be connected to a WiFi connection at this point.</strong><br>
 			<button onclick="PresetupOSfi()" class="btn">OK</button></div>
 		<div id="routiProgram" style="display: none;">
 			<div id="visualBanner">
 				<div id="myProgress"><div id="myBar"></div></div>
 			</div>
-			<iframe id="browserPORT" src="https://github.com"></iframe>
+			<div id="browserPORT">
+				<p>Open browser to surf the internet</p>
+				<button onclick="opnBrzr()" class="btn">Open Browser</button>
+			</div>
 			<div id="UIshou"></div>
 			<div id="alertBanner"></div>
 			<div id="UIport"></div>
 			<span id="versionShou"><small><code>Version "UImark I BETA"</code></small></span>
 			<script>
+				function initBETAset() {
+					setTimeout( function () {
+						const konBox = document.getElementById("konCheck");
+						const dino = document.getElementById("portabeta");
+						dino.style.display = "none";
+						konBox.style.display = "";
+					}, 1000)
+				}
 				function PresetupOSfi() {
 					setTimeout( function () {
 						setupOSfi();
