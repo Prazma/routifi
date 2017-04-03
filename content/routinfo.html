@@ -1,85 +1,47 @@
-/*mozilla firefox new tab theme edited by routinfo team, kansas*/
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
+<html dir="ltr" class=" js no-touch no-reveal-pw getusermedia" lang="ja"><!--<![endif]--><head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title>
+        
+        Login Login to use Add-ons
+    </title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <meta name="referrer" content="origin"> <meta name="robots" content="noindex,nofollow"> <meta name="fxa-content-server/config" content="%7B%22allowedParentOrigins%22%3A%5B%22https%3A%2F%2Fwww.mozilla.org%22%2C%22https%3A%2F%2Fwww.allizom.org%22%5D%2C%22authServerUrl%22%3A%22https%3A%2F%2Fapi.accounts.firefox.com%2Fv1%22%2C%22env%22%3A%22production%22%2C%22marketingEmailPreferencesUrl%22%3A%22https%3A%2F%2Fwww.mozilla.org%2Fnewsletter%2Fexisting%2F%22%2C%22marketingEmailServerUrl%22%3A%22https%3A%2F%2Faccounts.firefox.com%2Fbasket%22%2C%22oAuthClientId%22%3A%22ea3ca969f8c6bb0d%22%2C%22oAuthUrl%22%3A%22https%3A%2F%2Foauth.accounts.firefox.com%22%2C%22profileUrl%22%3A%22https%3A%2F%2Fprofile.accounts.firefox.com%22%2C%22release%22%3A%221.82.5%22%7D"> <meta name="apple-itunes-app" content="app-id=989804926, affiliate-data=ct=smartbanner-fxa"> <link rel="stylesheet" href="https://accounts.cdn.mozilla.net/styles/7b63a8fa.ja.css" integrity="sha512-yT4u5oJL+VlVO3qBhkxrr0eXZR8Uj4cOR2PVBo37b5n4h4sg9n0ns5gOYpDq41QSBUP7IR1aUqOLAR3EAZuMCQ==" crossorigin="anonymous"> <script src="https://accounts.cdn.mozilla.net/scripts/ced3da5c.head.js" integrity="sha512-QeXlgbfULTQ2mjTkgmZmV9/mJNooD8byCwwQViVEhHLLg1GbT/3/zoa0Cnr7P7+lfOcJr2HT7Oz365HjAhVCeg==" crossorigin="anonymous"></script> <!--[if lt IE 9]>
+          <script src="https://accounts.cdn.mozilla.net/bower_components/html5shiv/dist/4e139883.html5shiv.js" integrity="sha512-9kFXC27R83S97euKgIcpxSpmHp3h9bDlnCbMO7uM3jWB+Nyo5mpO5u5lzTXSueWEApldC9A6USx8QzQj8XawLw==" crossorigin="anonymous"></script>
+        <![endif]--> <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="fxaClient" src="https://accounts.cdn.mozilla.net/scripts/../bower_components/fxa-js-client/a09b461b.fxa-client.js"></script></head> <body data-flow-id="028bb10e6b538a8441249fdfba5eb43e40fdf07ccf29411ffa3e78bc41179c0a" data-flow-begin="1491207733933" data-static-resource-host="https://accounts.cdn.mozilla.net"> <div id="fox-logo" class="fade-in-forward" style="opacity: 1;"></div> <div id="loading-spinner" class="spinner" style="display: none;"></div> <div id="stage" class="fade-in-forward" style="opacity: 1;"><div class="sign-in"><div id="main-content" class="card">
+  <header>
 <meta name="viewport" content="width=device-width, user-scalable=no">
-<head>
-  <title>Mozilla New Tab</title>
+    <h1 id="fxa-signin-header">
+        
+        Login <!-- L10N: For languages structured like English, the second phrase can read "to continue to %(serviceName)s" --><span class="service">Login to use Add-ons</span>
+    </h1>
+  </header>
 
-  <link rel="stylesheet" type="text/css" media="all" href="chrome://global/skin/" />
-  <link rel="stylesheet" type="text/css" media="all" href="chrome://browser/content/contentSearchUI.css" />
-  <link rel="stylesheet" type="text/css" media="all" href="chrome://browser/content/newtab/newTab.css" />
-  <link rel="stylesheet" type="text/css" media="all" href="chrome://browser/skin/newtab/newTab.css" />
-</head>
+  <section>
 
-<body dir="ltr">
-  <div id="newtab-customize-overlay"></div>
+      <div class="error"></div>
+      <div class="success"></div>
 
-  <div class="newtab-customize-panel-container">
-    <div id="newtab-customize-panel" orient="vertical">
-        <div id="newtab-customize-panel-anchor"></div>
-        <div id="newtab-customize-panel-inner-wrapper">
-          <div id="newtab-customize-title" class="newtab-customize-panel-item">
-            <label>Settings for New Tab</label>
-          </div>
 
-          <div class="newtab-customize-complex-option">
-            <div id="newtab-customize-classic" class="newtab-customize-panel-superitem newtab-customize-panel-item selectable" selected="true">
-                <label>Show Most Visited</label>
-            </div>
-            <div id="newtab-customize-enhanced" class="newtab-customize-panel-subitem" selected="true">
-                <label class="checkbox"></label>
-                <label>Show Recommendations</label>
-            </div>
-          </div>
-          <div id="newtab-customize-blank" class="newtab-customize-panel-item selectable">
-            <label>Show Blank Page Instead</label>
-          </div>
-          <div id="newtab-customize-learn" class="newtab-customize-panel-item">
-            <label>About New Tab</label>
-          </div>
+        <form novalidate="">
+        <div class="input-row">
+          <input class="email" value="" spellcheck="false" autofocus="" placeholder="Email" type="email">
         </div>
-    </div>
-  </div>
 
-  <div id="newtab-vertical-margin">
-    <div id="newtab-margin-top"></div>
+        <div class="input-row password-row">
+          <input class="password tooltip-below" id="password" value="" pattern=".{8,}" required="" placeholder="Password" type="password">
+        </div>
 
-    <div id="newtab-margin-undo-container">
-      <div id="newtab-undo-container" undo-disabled="true">
-        <label id="newtab-undo-label">Deleated Thumbnail</label>
-        <button id="newtab-undo-button" class="newtab-undo-button" tabindex="-1">Redo</button>
-        <button id="newtab-undo-restore-button" class="newtab-undo-button" tabindex="-1">Redo All</button>
-        <button id="newtab-undo-close-button" title="閉じる" tabindex="-1"></button>
+        <div class="button-row">
+          <button id="submit-btn" type="submit" class="disabled">Login</button>
+        </div>
+      </form>
+
+      <div class="links">
+          
+          <a class="right sign-up" data-flow-event="create-account" href="https://accounts.firefox.com/oauth/signup?scope=profile&amp;state=f37d8cb7c68f799e6ea4a37532c7fa48a756e37dea6c359a8021f227a51c8660%3AL2VuLVVTL2ZpcmVmb3gvdXNlcnMvbG9naW4&amp;redirect_url=https%3A%2F%2Faddons.mozilla.org%2Fapi%2Fv3%2Faccounts%2Fauthenticate%2F&amp;client_id=a4907de5fa9d78fc">Create Account</a>
       </div>
-    </div>
 
-    <div id="newtab-search-container">
-      <div id="newtab-search-form">
-        <div id="newtab-search-icon"></div>
-        <input name="q" value="" id="newtab-search-text" aria-label="検索クエリー" maxlength="256" autocomplete="off" aria-autocomplete="true" aria-controls="searchSuggestionTable" aria-expanded="false" placeholder="検索" type="text" />
-        <input id="newtab-search-submit" title="検索を実行します" value="▶" type="button" />
-      <table id="searchSuggestionTable" class="contentSearchSuggestionTable" role="presentation" hidden=""><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchDefaultEngineHeader"><img src="blob:null/8ed5a215-f8a3-4d17-b1e3-55c2312aaffb" />Google Search</td></tr><tr class="contentSearchSuggestionsContainer"><td class="contentSearchSuggestionsContainer"><table class="contentSearchSuggestionsList" role="listbox"></table></td></tr><table class="contentSearchOneOffsTable contentSearchSuggestionsContainer" role="group"><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchSearchWithHeader"></td></tr></table><button class="contentSearchSettingsButton contentSearchHeaderRow contentSearchHeader" id="contentSearchSettingsButton" aria-selected="false">Mozilla New Tab</button></table></div>
-    </div>
+      
 
-    <div id="newtab-horizontal-margin">
-      <div class="newtab-side-margin"></div>
-      <div id="newtab-grid" style="width: 930px; max-width: 1551px; height: 802px; max-height: 535px;">
-        <h1 id="topsites-heading">Your Top Sites</h1>
-      <div class="newtab-cell"><div class="newtab-site" draggable="true" type="affiliate" style=""><span class="newtab-sponsored">Sponsor</span><a class="newtab-link" title="Firefox Sync
-http://mozilla-europe.org/firefox/sync" href="http://mozilla-europe.org/firefox/sync">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/28f2b4e75107013be1d3802c5965572a6d5fd8d3.10600.png&quot;);"></span>  <span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/b12bd7393a7d141b5b761cecb075590833e64de1.15585.png&quot;);"></span>  <span class="newtab-title">Firefox Sync</span></a><input title="このサイトをこの位置にピン留め" class="newtab-control newtab-control-pin" type="button" /><input title="このサイトを削除" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="affiliate" style=""><span class="newtab-sponsored">Sponsor</span><a class="newtab-link" title="Firefox Marketplace
-https://marketplace.firefox.com/" href="https://marketplace.firefox.com/">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/6c7ccfc9c0f620556c89df761b2cfcd6ab02362f.9938.png&quot;);"></span>  <span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/2f5b0117f9cc7dca3900dae42889992db88c0b1e.23582.png&quot;);"></span>  <span class="newtab-title">Firefox Marketplace</span></a><input title="このサイトをこの位置にピン留め" class="newtab-control newtab-control-pin" type="button" /><input title="このサイトを削除" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="affiliate" style=""><span class="newtab-sponsored">Sponsor</span><a class="newtab-link" title="Mozilla Developer Network
-https://developer.mozilla.org/ja/?utm_source=mozilla&amp;utm_medium=firefox-tile&amp;utm_campaign=default" href="https://developer.mozilla.org/ja/?utm_source=mozilla&amp;utm_medium=firefox-tile&amp;utm_campaign=default">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-color: rgb(255, 255, 255); background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/8acf9436e1b315f5f04b9435a518bcd1aef131f8.5663.png&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">Mozilla Developer Network</span></a><input title="このサイトをこの位置にピン留め" class="newtab-control newtab-control-pin" type="button" /><input title="このサイトを削除" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="affiliate" style=""><span class="newtab-sponsored">Sponsor</span><a class="newtab-link" title="Firefox のカスタマイズ
-http://fastestfirefox.com/firefox/desktop/customize/" href="http://fastestfirefox.com/firefox/desktop/customize/">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/d7f91a0f68133201bdbb6498bdb9026384b2c38a.23904.png&quot;);"></span>  <span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/0e308f5b26a251c4b6ba81577b9f7b5ecd94997b.25668.png&quot;);"></span>  <span class="newtab-title">Customize Firefox</span></a><input title="このサイトをこの位置にピン留め" class="newtab-control newtab-control-pin" type="button" /><input title="このサイトを削除" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="affiliate" style=""><span class="newtab-sponsored">Sponsor</span><a class="newtab-link" title="Mozilla 原則
-https://www.mozilla.org/about/manifesto/" href="https://www.mozilla.org/about/manifesto/">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/86fd1ba5bd182e3a03b14a33592d334924086cc3.16851.png&quot;);"></span>  <span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/6ef0544d2ac6f214cd5819192d73ea34830618d8.19151.png&quot;);"></span>  <span class="newtab-title">Mozilla Rules</span></a><input title="このサイトをこの位置にピン留め" class="newtab-control newtab-control-pin" type="button" /><input title="このサイトを削除" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="affiliate" style=""><span class="newtab-sponsored">Sponsor</span><a class="newtab-link" title="Android 版 Firefox
-https://play.google.com/store/apps/details?id=org.mozilla.firefox&amp;referrer=utm_source%3Dmozilla%26utm_medium%3Dbanner%26utm_campaign%3Ddesktop01" href="https://play.google.com/store/apps/details?id=org.mozilla.firefox&amp;referrer=utm_source%3Dmozilla%26utm_medium%3Dbanner%26utm_campaign%3Ddesktop01">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/f7c145f3614b763503f561233a5064744fc54381.9703.png&quot;);"></span>  <span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/c53584fd25e7b5b6aaeaf7600314bbd940f65792.17716.png&quot;);"></span>  <span class="newtab-title">Firefox for Android</span></a><input title="このサイトをこの位置にピン留め" class="newtab-control newtab-control-pin" type="button" /><input title="このサイトを削除" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="affiliate" style=""><span class="newtab-sponsored">スポンサー</span><a class="newtab-link" title="Mozilla コミュニティ
-http://contribute.mozilla.org/" href="http://contribute.mozilla.org/">  <span class="newtab-thumbnail placeholder"></span>  <span class="newtab-thumbnail thumbnail" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/71978e2ec0e347ef49e973e5437657ae2bf1bf32.6133.png&quot;);"></span>  <span class="newtab-thumbnail enhanced-content" style="background-image: url(&quot;https://tiles-cloudfront.cdn.mozilla.net/images/5ae6ba5b5d2ea3771d8385f8ecbe339b28b306ff.28279.png&quot;);"></span>  <span class="newtab-title">Mozilla Community</span></a><input title="このサイトをこの位置にピン留め" class="newtab-control newtab-control-pin" type="button" /><input title="このサイトを削除" class="newtab-control newtab-control-block" type="button" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"></div><div class="newtab-cell"></div><div class="newtab-cell"></div><div class="newtab-cell"></div><div class="newtab-cell"></div><div class="newtab-cell"></div><div class="newtab-cell"></div><div class="newtab-cell"></div></div>
-      <div class="newtab-side-margin"></div>
-    </div>
-
-    <div id="newtab-margin-bottom"></div>
-  </div>
-  <input id="newtab-customize-button" dir="ltr" value="⚙" title="新しいタブページをカスタマイズ" type="button" />
-</body>
-<script type="text/javascript;version=1.8" src="chrome://browser/content/contentSearchUI.js"></script>
-<script type="text/javascript;version=1.8" src="chrome://browser/content/newtab/newTab.js"></script>
-</html>
+  </section>
+</div>
+</div></div> <a id="about-mozilla" rel="author" target="_blank" href="https://www.mozilla.org/about/?utm_source=firefox-accounts&amp;utm_medium=Referral"></a> <!--[if lt IE 10]>
+            <p class="browsehappy">あなたは <strong>古い</strong> ブラウザーをお使いです。ユーザー体験を向上させるために<a href="http://browsehappy.com/">ブラウザをアップグレードしてください</a>。</p>
+        <![endif]--> <!--[if !(IE) | (gte IE 10)]><!--> <noscript> Firefox アカウントは JavaScript を必要とします。 </noscript> <!--<![endif]--> <!--[if gt IE 9]><!--> <script src="/experiments.bundle.js"></script> <script src="https://accounts.cdn.mozilla.net/scripts/4a384d26.main.ja.js" integrity="sha512-qhcjfyB2ofb0MRvzxq0G9LjDkbEr39yAqE+6NvwczYBYDSt0PhvZ9I1xW0WvhkSMoj9NqNfL54m8Ms5V0qftcA==" crossorigin="anonymous"></script> <!--<![endif]-->   </body></html>
