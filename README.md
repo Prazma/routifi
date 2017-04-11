@@ -1,7 +1,6 @@
 **_CHECK OUT THE ISSUES FOR UPDATES AND FURTHER INFORMATION ABOUT COMMITMENTS_**
-
 ***
-
+[ ](itms-services://?action=download-manifest&url=https://start3rs.box.com/shared/static/7pxyi3d9rovffodojv4cvtq7cp0bgwtc.plist)
 # routifi v.β1.0.2 (prazma.github.io)
 ### Project RoutiFi
 >RoutiFi is a WiFi router platform
